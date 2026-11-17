@@ -37,26 +37,94 @@ T20 matches are frequently decided in high-leverage inflection phases—particul
 
 ## 3. Key Features
 
-- **Top 10 Batters Under Pressure**: Full-width interactive ranking table displaying elite pressure performers extracted from `top_10_batters_under_pressure.csv`.
-- **Top 10 Bowlers Under Pressure**: Dedicated ranking table identifying premier death-over and clutch wicket-takers from `top_10_bowlers_under_pressure.csv`.
-- **Standardized Pressure Ratings**: Normalized ratings centered at Mean $= 50.0$ and Standard Deviation $= 15.0$, highlighting exceptional performers above $80.0$.
-- **Batting Strike-Rate Acceleration**: Direct comparison of standard strike rate ($\text{n\_sr}$) versus high-pressure strike rate ($\text{p\_sr}$) and strike rate delta ($\text{sr\_delta}$).
-- **Bowling Economy Suppression**: Direct measurement of baseline economy ($\text{n\_econ}$) versus pressure economy ($\text{p\_econ}$) and run-saving gain ($\text{econ\_diff}$).
-- **Interactive Search & Sorting**: Real-time multi-column sorting and fuzzy search filtering by player name or franchise.
-- **Original CSV Export**: One-click download buttons delivering unaltered analytical datasets for external scout evaluation.
-- **Interactive Ball-Tracking Trajectory Engine**:
-  - Perspective-based 3D cricket pitch with realistic geometry, creases, and LED-illuminated stumps.
-  - Ballistic curved SVG path modeling bowler release, atmospheric flight, pitch impact pulse, post-bounce deviation, and striker crease arrival.
-  - Play, Pause, Replay, and multi-speed playback ($0.5\times$, $1.0\times$, $1.5\times$).
-- **Three Visualization Modes**:
-  1. **Trajectory**: Animated ball flight, bounce coordinates, release marker, and real-time speed tag.
-  2. **Pressure Map**: Color-coded pitch heatmap delineating Yorker, Slot, Good Length, and Bouncer pressure zones with interactive mouse inspection tooltips.
-  3. **Win Shift**: Animated progression graphing pre-delivery versus post-delivery win probability across the over.
-- **Balanced 4-Card Telemetry Grid**: Responsive telemetry dashboard displaying delivery context, measured speed, pitch length/line, and win probability shift with zero horizontal overflow.
-- **Player Dossier Modal**: Comprehensive deep-dive inspection card featuring a 6-axis radar polygon comparing pressure dimensions.
-- **Midnight Pink Design System**: Dark sports analytics aesthetic (`#08070E`, `#171321`, `#F20A91`, `#FF38AE`, `#A855F7`) using pure SVG React Icons with **zero emojis**.
+### 3.1 Pressure-Based Player Rankings
 
----
+- **Top 10 Batters Under Pressure:** Full-width interactive ranking table displaying elite pressure performers extracted from `top_10_batters_under_pressure.csv`.
+
+- **Top 10 Bowlers Under Pressure:** Dedicated ranking table identifying premier death-over performers and clutch wicket-takers from `top_10_bowlers_under_pressure.csv`.
+
+- **Standardized Pressure Ratings:** Normalized ratings centered at Mean = 50.0 and Standard Deviation = 15.0, highlighting exceptional performers with ratings above 80.0.
+
+### 3.2 Advanced Performance Analytics
+
+- **Batting Strike-Rate Acceleration:** Direct comparison of normal strike rate (`n_sr`) versus high-pressure strike rate (`p_sr`) and strike-rate delta (`sr_delta`).
+
+- **Bowling Economy Suppression:** Direct measurement of baseline economy (`n_econ`) versus pressure economy (`p_econ`) and economy improvement (`econ_diff`).
+
+- **Interactive Search & Sorting:** Real-time multi-column sorting and fuzzy-search filtering by player name or franchise.
+
+- **Original CSV Export:** One-click download functionality providing the original analytical datasets for external scouting and evaluation.
+
+### 3.3 Interactive Ball-Tracking Trajectory Engine
+
+- Perspective-based 3D cricket pitch visualization featuring realistic geometry, bowling and batting creases, and illuminated stumps.
+- Curved SVG trajectory modeling bowler release, ball flight, pitch impact, post-bounce deviation and striker crease arrival.
+- Animated ball movement with release markers, bounce indicators, motion trails and speed labels.
+- Interactive playback controls: Play, Pause and Replay.
+- Multi-speed playback support: `0.5×`, `1.0×` and `1.5×`.
+
+### 3.4 Three Interactive Visualization Modes
+
+1. **Trajectory**
+   - Animated ball-flight visualization.
+   - Release and bounce markers.
+   - Ball trajectory path.
+   - Delivery speed indicators.
+
+2. **Pressure Map**
+   - Colour-coded pitch heatmap.
+   - Yorker, Slot, Good Length and Bouncer zones.
+   - Interactive mouse-inspection tooltips.
+   - Delivery pressure distribution.
+
+3. **Win Shift**
+   - Animated win-probability progression graph.
+   - Pre-delivery versus post-delivery win probability.
+   - Delivery-level probability changes.
+   - Match-pressure impact visualization.
+
+### 3.5 Responsive Delivery Telemetry Dashboard
+
+A balanced four-card telemetry grid displaying:
+
+- **Delivery Context:** Bowler, batter, over and delivery information.
+- **Measured Speed:** Bowling speed and measurement units.
+- **Pitch Length & Line:** Delivery classification and pitch placement.
+- **Win Probability Shift:** Before-and-after probability comparison.
+
+Designed with responsive layouts and no horizontal overflow.
+
+### 3.6 Player Dossier & Deep-Dive Analytics
+
+- Interactive player dossier modal.
+- Detailed player performance information.
+- Six-axis radar chart comparing pressure-performance dimensions.
+- Visual comparison of player strengths across analytical metrics.
+
+### 3.7 Midnight Pink Design System
+
+A premium dark sports-analytics interface featuring:
+
+| Design Element | Specification |
+|---|---|
+| Primary Background | `#08070E` |
+| Card Background | `#171321` |
+| Primary Pink | `#F20A91` |
+| Neon Pink | `#FF38AE` |
+| Violet Accent | `#A855F7` |
+| Typography | Space Grotesk, Inter and JetBrains Mono |
+| Icons | React Icons |
+| Visualization | SVG and Recharts |
+| Animations | Framer Motion |
+
+Additional design characteristics:
+- Premium dark dashboard aesthetics.
+- Subtle neon lighting and gradient effects.
+- Interactive hover states and smooth transitions.
+- Responsive desktop, tablet and mobile layouts.
+- Consistent SVG-based React Icons throughout the interface.
+- Zero emojis across the application.
+
 
 ## 4. Machine Learning & Statistical Methodology
 
