@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPL Pressure Analytics | Advanced Cricket Performance Intelligence</title>
+  
+  <!-- Google Fonts: Space Grotesk, Sora, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Sora:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- React Icons SVG Vector Engine (Strict Zero Emojis) -->
+  <script src="assets/icons.js"></script>
+</head>
+<body>
+
+  <!-- Professional Header and Navigation -->
+  <header class="site-header">
+    <div class="brand-wrapper">
+      <div class="brand-logo-container">
+        <img src="assets/rr_logo.jpg" alt="Rajasthan Royals Analytics Crest" class="brand-logo-img">
+      </div>
+      <div class="brand-titles">
+        <h1>IPL PRESSURE ANALYTICS</h1>
+        <p>Advanced Cricket Performance Intelligence</p>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="site-nav">
+        <li>
+          <a href="#overview" class="nav-link active">
+            <script>document.write(window.renderReactIcon('bolt', '', 14));</script>
+            <span>Overview</span>
+          </a>
+        </li>
+        <li>
+          <a href="#batting-section" class="nav-link">
+            <script>document.write(window.renderReactIcon('bat', '', 14));</script>
+            <span>Batting Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a href="#bowling-section" class="nav-link">
+            <script>document.write(window.renderReactIcon('target', '', 14));</script>
+            <span>Bowling Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a href="#visualizations-section" class="nav-link">
+            <script>document.write(window.renderReactIcon('chartBar', '', 14));</script>
+            <span>Performance Charts</span>
+          </a>
+        </li>
+        <li>
+          <a href="#methodology-section" class="nav-link">
+            <script>document.write(window.renderReactIcon('flask', '', 14));</script>
+            <span>Methodology</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-status">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>SUPERVISED RF R² 0.842</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Premium Hero Section -->
+    <section class="hero-section" id="overview">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <script>document.write(window.renderReactIcon('shield', '', 13));</script>
+          <span>DATA-DRIVEN CRICKET INTELLIGENCE</span>
+        </div>
+        <h2 class="hero-title">
+          IPL Pressure Performance <span class="pink-gradient">Analytics</span>
+        </h2>
+        <p class="hero-desc">
+          Identifying the most reliable batters and bowlers through data-driven analysis of performance under pressure. Utilizing dynamic win-impact context simulation, Empirical Bayes prior shrinkage (<span style="color:var(--bright-pink); font-weight:700;">k=180 balls</span>), and supervised machine learning across 883 T20 matches.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#batting-section" class="btn-primary">
+            <script>document.write(window.renderReactIcon('bat', '', 14));</script>
+            <span>Explore Batting Rankings</span>
+          </a>
+          <a href="#bowling-section" class="btn-secondary">
+            <script>document.write(window.renderReactIcon('target', '', 14));</script>
+            <span>Explore Bowling Rankings</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- High-Tech Cricket Telemetry Visual Accent -->
+      <div class="hero-visual" id="hero-pitch-container">
+        <!-- Rendered by CricketPressureVisualizer in three_pitch.js -->
+      </div>
+    </section>
+
+    <!-- Performance Overview – Four Statistics Cards -->
+    <section class="overview-grid">
+      <div class="overview-card">
+        <div class="overview-card-header">
+          <span class="overview-card-label">Total Ranked Players</span>
+          <span class="overview-card-icon"><script>document.write(window.renderReactIcon('users', '', 15));</script></span>
+        </div>
+        <div class="overview-card-value tabular-nums" id="kpi-total-players">20</div>
+        <div class="overview-card-meta">Elite performers across both disciplines</div>
+      </div>
+
+      <div class="overview-card">
+        <div class="overview-card-header">
+          <span class="overview-card-label">Ranked Batters</span>
+          <span class="overview-card-icon"><script>document.write(window.renderReactIcon('bat', '', 15));</script></span>
+        </div>
+        <div class="overview-card-value tabular-nums" id="kpi-ranked-batters">10</div>
+        <div class="overview-card-meta">Evaluated under RRR ≥ 10.0 rpo</div>
+      </div>
+
+      <div class="overview-card">
+        <div class="overview-card-header">
+          <span class="overview-card-label">Ranked Bowlers</span>
+          <span class="overview-card-icon"><script>document.write(window.renderReactIcon('target', '', 15));</script></span>
+        </div>
+        <div class="overview-card-value tabular-nums" id="kpi-ranked-bowlers">10</div>
+        <div class="overview-card-meta">Evaluated in Death Overs & High Stakes</div>
+      </div>
+
+      <div class="overview-card">
+        <div class="overview-card-header">
+          <span class="overview-card-label">Highest Pressure Rating</span>
+          <span class="overview-card-icon"><script>document.write(window.renderReactIcon('trophy', '', 15));</script></span>
+        </div>
+        <div class="overview-card-value tabular-nums" style="color:var(--bright-pink);" id="kpi-highest-rating">95.6</div>
+        <div class="overview-card-meta" id="kpi-highest-player">Sunil Narine (Rating: 95.6)</div>
+      </div>
+    </section>
+
+    <!-- SECTION A: TOP 10 BATTERS UNDER PRESSURE (FULL WIDTH VERTICAL) -->
+    <section class="ranking-section" id="batting-section">
+      <div class="ranking-section-header">
+        <div class="ranking-title-group">
+          <div class="ranking-role-icon batting">
+            <script>document.write(window.renderReactIcon('bat', '', 20));</script>
+          </div>
+          <div>
+            <h3 class="ranking-section-title">Top 10 Batters Under Pressure</h3>
+            <p class="ranking-section-subtitle">
+              Ranked from <code style="color:var(--bright-pink); font-family:var(--font-mono);">top_10_batters_under_pressure.csv</code> using Empirical Bayes rating and strike rate delta.
+            </p>
+          </div>
+        </div>
+
+        <div class="ranking-controls">
+          <div class="search-field">
+            <span class="search-icon">
+              <script>document.write(window.renderReactIcon('search', '', 13));</script>
+            </span>
+            <input type="text" id="batter-search-input" placeholder="Search batter or franchise...">
+          </div>
+
+          <a href="top_10_batters_under_pressure.csv" download class="btn-download">
+            <script>document.write(window.renderReactIcon('download', '', 14));</script>
+            <span>Download Batters CSV</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Responsive Full-Width Table Container -->
+      <div class="table-responsive-wrapper">
+        <table class="analytics-table" id="top10-batters-table">
+          <thead>
+            <tr>
+              <th data-sort="rank" style="width:70px;">Rank <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="striker_name">Batter Name <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="team">Franchise / Team <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="pressure_rating" style="text-align:right;">Pressure Rating <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_sr" style="text-align:right;">Pressure SR <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="n_sr" style="text-align:right;">Normal SR <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="sr_delta" style="text-align:right;">Delta SR <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_runs" style="text-align:right;">Runs / Balls <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_bdry_pct" style="text-align:right;">Boundary % <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_dot_pct" style="text-align:right;">Dot % <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_bpd" style="text-align:right;">Balls / Out <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_ctx_val_100" style="text-align:right;">Context Val <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th style="text-align:center;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="batters-table-tbody">
+            <!-- Dynamically populated from CSV -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION B: TOP 10 BOWLERS UNDER PRESSURE (FULL WIDTH VERTICAL) -->
+    <section class="ranking-section" id="bowling-section">
+      <div class="ranking-section-header">
+        <div class="ranking-title-group">
+          <div class="ranking-role-icon bowling">
+            <script>document.write(window.renderReactIcon('target', '', 20));</script>
+          </div>
+          <div>
+            <h3 class="ranking-section-title">Top 10 Bowlers Under Pressure</h3>
+            <p class="ranking-section-subtitle">
+              Ranked from <code style="color:var(--bright-pink); font-family:var(--font-mono);">top_10_bowlers_under_pressure.csv</code> using economy suppression and elite batter dismissal rate.
+            </p>
+          </div>
+        </div>
+
+        <div class="ranking-controls">
+          <div class="search-field">
+            <span class="search-icon">
+              <script>document.write(window.renderReactIcon('search', '', 13));</script>
+            </span>
+            <input type="text" id="bowler-search-input" placeholder="Search bowler or franchise...">
+          </div>
+
+          <a href="top_10_bowlers_under_pressure.csv" download class="btn-download">
+            <script>document.write(window.renderReactIcon('download', '', 14));</script>
+            <span>Download Bowlers CSV</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Responsive Full-Width Table Container -->
+      <div class="table-responsive-wrapper">
+        <table class="analytics-table" id="top10-bowlers-table">
+          <thead>
+            <tr>
+              <th data-sort="rank" style="width:70px;">Rank <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="bowler_name">Bowler Name <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="team">Franchise / Team <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="pressure_rating" style="text-align:right;">Pressure Rating <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_econ" style="text-align:right;">Pressure Econ <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="n_econ" style="text-align:right;">Normal Econ <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="econ_diff" style="text-align:right;">Econ Gain <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_wkts" style="text-align:right;">Wkts / Balls <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_dot_pct" style="text-align:right;">Dot % <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_tier_wkt_pct" style="text-align:right;">Top-Tier Wkt % <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th data-sort="p_ctx_rs_24" style="text-align:right;">Runs Saved / 24b <span class="sort-icon"><script>document.write(window.renderReactIcon('sort', '', 10));</script></span></th>
+              <th style="text-align:center;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="bowlers-table-tbody">
+            <!-- Dynamically populated from CSV -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION C: STATISTICAL PERFORMANCE VISUALIZATIONS (4 DARK CHARTS) -->
+    <section class="visualizations-grid" id="visualizations-section">
+      <!-- Chart 1: Batters Pressure Rating -->
+      <div class="chart-panel">
+        <div class="chart-panel-header">
+          <h4 class="chart-panel-title">
+            <script>document.write(window.renderReactIcon('bat', '', 16));</script>
+            <span>Top 10 Batters – Pressure Rating</span>
+          </h4>
+          <span style="font-size:0.75rem; color:var(--text-muted); font-family:var(--font-mono);">Empirical Bayes Score</span>
+        </div>
+        <div class="chart-container-box">
+          <canvas id="chart-batters-rating" width="620" height="280"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 2: Bowlers Pressure Rating -->
+      <div class="chart-panel">
+        <div class="chart-panel-header">
+          <h4 class="chart-panel-title">
+            <script>document.write(window.renderReactIcon('target', '', 16));</script>
+            <span>Top 10 Bowlers – Pressure Rating</span>
+          </h4>
+          <span style="font-size:0.75rem; color:var(--text-muted); font-family:var(--font-mono);">Empirical Bayes Score</span>
+        </div>
+        <div class="chart-container-box">
+          <canvas id="chart-bowlers-rating" width="620" height="280"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 3: Batting SR Acceleration -->
+      <div class="chart-panel">
+        <div class="chart-panel-header">
+          <h4 class="chart-panel-title">
+            <script>document.write(window.renderReactIcon('chartLine', '', 16));</script>
+            <span>Batting Strike Rate – Normal vs Pressure</span>
+          </h4>
+          <div style="font-size:0.75rem; color:var(--text-muted); display:flex; gap:0.75rem;">
+            <span><strong style="color:#312C45;">■</strong> Normal</span>
+            <span><strong style="color:var(--primary-pink);">■</strong> High Pressure</span>
+          </div>
+        </div>
+        <div class="chart-container-box">
+          <canvas id="chart-batters-delta" width="620" height="280"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 4: Bowling Economy Suppression -->
+      <div class="chart-panel">
+        <div class="chart-panel-header">
+          <h4 class="chart-panel-title">
+            <script>document.write(window.renderReactIcon('chartBar', '', 16));</script>
+            <span>Bowling Economy – Normal vs Pressure</span>
+          </h4>
+          <div style="font-size:0.75rem; color:var(--text-muted); display:flex; gap:0.75rem;">
+            <span><strong style="color:#312C45;">■</strong> Normal</span>
+            <span><strong style="color:var(--bright-pink);">■</strong> High Pressure</span>
+          </div>
+        </div>
+        <div class="chart-container-box">
+          <canvas id="chart-bowlers-delta" width="620" height="280"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION D: METHODOLOGY & ANALYTICAL RIGOR -->
+    <section class="methodology-container" id="methodology-section">
+      <div class="ranking-section-header" style="border:none; margin:0; padding:0;">
+        <div class="ranking-title-group">
+          <div class="ranking-role-icon" style="background:rgba(242,10,145,0.16); color:var(--bright-pink); border:1px solid rgba(242,10,145,0.35);">
+            <script>document.write(window.renderReactIcon('flask', '', 20));</script>
+          </div>
+          <div>
+            <h3 class="ranking-section-title">Scientific Methodology & Analytical Model</h3>
+            <p class="ranking-section-subtitle">
+              Reproducible machine-learning framework establishing empirical baselines across 201,000+ deliveries.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="methodology-grid">
+        <div class="method-block">
+          <h4>
+            <script>document.write(window.renderReactIcon('bolt', '', 15));</script>
+            <span>1. Contextual Pressure Index</span>
+          </h4>
+          <p>
+            Dynamically evaluated per ball using Required Run Rate (RRR ≥ 10.0 rpo), balls remaining (&lt;30), wickets lost, death overs phase, and knockout match multiplier.
+          </p>
+          <div class="math-formula">
+            Pressure = Sigmoid(α·RRR + β·Wkts_Lost - γ·Balls_Rem) · Phase_Mult
+          </div>
+        </div>
+
+        <div class="method-block">
+          <h4>
+            <script>document.write(window.renderReactIcon('chartBar', '', 15));</script>
+            <span>2. Empirical Bayes Shrinkage</span>
+          </h4>
+          <p>
+            Prevents small sample-size distortions by shrinking raw individual statistics toward league priors using shrinkage constant <span style="color:var(--bright-pink); font-weight:700;">k = 180 balls</span>.
+          </p>
+          <div class="math-formula">
+            EB(x) = (n · x + k · μ_prior) / (n + k)
+          </div>
+        </div>
+
+        <div class="method-block">
+          <h4>
+            <script>document.write(window.renderReactIcon('brain', '', 15));</script>
+            <span>3. Supervised Win-Impact Weights</span>
+          </h4>
+          <p>
+            Feature importance learned via 5-fold cross-validated Random Forest & Gradient Boosting Regressors predicting match win outcomes (<span style="color:var(--bright-pink); font-weight:700;">R² = 0.842</span>).
+          </p>
+          <div class="math-formula">
+            Rating = 50 + 15 · Z_score(Σ w_i · Z(EB_i))
+          </div>
+        </div>
+      </div>
+
+      <!-- Model Visual Validation Report Embed -->
+      <div style="margin-top:2.5rem; text-align:center;">
+        <h5 style="color:var(--text-secondary); font-family:var(--font-title); font-size:0.88rem; margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.8px;">
+          Model Validation Visual Report (Exported from Python Pipeline)
+        </h5>
+        <img src="assets/superr_selector_pressure_analysis.png" alt="Statistical Model Validation" style="max-width:100%; border-radius:12px; border:1px solid rgba(242,10,145,0.3); box-shadow:0 8px 30px rgba(0,0,0,0.5);">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Player Detail Modal (Dossier) -->
+  <div class="modal-backdrop" id="player-dossier-modal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-trigger">
+        <script>document.write(window.renderReactIcon('cross', '', 14));</script>
+      </button>
+
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid var(--border-subtle); padding-bottom:1.25rem;">
+        <div>
+          <span style="font-family:var(--font-mono); font-size:0.82rem; color:var(--rank-first); font-weight:800; text-transform:uppercase;" id="modal-rank-target">#1</span>
+          <h2 style="font-family:var(--font-heading); font-size:1.85rem; font-weight:800; color:var(--text-primary); margin:0.15rem 0;" id="modal-name-target">Player Name</h2>
+          <span class="team-badge-cell" id="modal-team-target">Franchise</span>
+        </div>
+
+        <div style="text-align:right;">
+          <div style="font-family:var(--font-mono); font-size:2.4rem; font-weight:800; color:var(--bright-pink); line-height:1;" id="modal-rating-target">81.2</div>
+          <div style="font-family:var(--font-title); font-size:0.72rem; color:var(--text-secondary); text-transform:uppercase; font-weight:700; margin-top:0.25rem;">Pressure Rating</div>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.75rem; margin-top:1.5rem;">
+        <div id="modal-stats-grid" style="display:grid; grid-template-columns:1fr; gap:0.6rem;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+          <div style="font-family:var(--font-title); font-size:0.8rem; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:0.75rem;">
+            6-Axis Pressure Performance Radar
+          </div>
+          <canvas id="modal-radar-canvas" width="280" height="280"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="brand-logo-container" style="width:28px; height:28px; border-radius:6px; box-shadow:none;">
+        <img src="assets/rr_logo.jpg" alt="RR" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <strong>IPL PRESSURE PERFORMANCE ANALYTICS</strong>
+    </div>
+    <p>Advanced Quantitative Cricket Scouting Platform • Supervised Win-Impact Intelligence System</p>
+    <p style="color:var(--text-muted); font-size:0.78rem; margin-top:0.35rem;">Derived from 883 T20/IPL matches and 201,000+ ball-by-ball delivery records using Empirical Bayes prior shrinkage.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/data.js"></script>
+  <script src="assets/three_pitch.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
